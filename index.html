@@ -1152,5 +1152,156 @@ section { padding-block: clamp(var(--space-12), 7vw, var(--space-24)); }
 })();
 
 
-</script></body>
+</script>
+<!-- Контакты Всеволода: телефон и MAX -->
+<style>
+  .vs-contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    max-width: 100%;
+    margin: 14px 0;
+  }
+
+  .vs-contact-buttons > a.btn {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    text-align: center;
+    justify-content: center;
+  }
+
+  header .vs-contact-buttons {
+    flex: 0 1 auto;
+    margin: 0;
+  }
+
+  header .vs-contact-buttons > a.btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  header .vs-header-container {
+    flex-wrap: wrap !important;
+    gap: 12px;
+  }
+
+  @media (max-width: 1100px) {
+    header .vs-contact-buttons {
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .vs-contact-buttons > a.btn {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  function restoreContacts() {
+    var phoneUrl = "tel:+79698324789";
+    var maxUrl =
+      "https://max.ru/u/f9LHodD0cOKLGqssF7qo6n3_l4jz5PB2t560hCcUEd0Wa13mFHj9s9XcJnU";
+
+    function makeButton(text, url, newTab) {
+      var link = document.createElement("a");
+      link.className = "btn btn-accent";
+      link.textContent = text;
+      link.href = url;
+
+      if (newTab) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+
+      return link;
+    }
+
+    function addContacts(group, scope) {
+      if (!scope.querySelector('a[href="' + phoneUrl + '"]')) {
+        group.appendChild(
+          makeButton("8 (969) 832-47-89", phoneUrl, false)
+        );
+      }
+
+      if (!scope.querySelector('a[href*="max.ru/"]')) {
+        group.appendChild(
+          makeButton("Написать в MAX", maxUrl, true)
+        );
+      }
+    }
+
+    // Верх сайта: рядом с кнопкой расчёта.
+    var header = document.querySelector("header");
+
+    if (header && !document.getElementById("vs-header-contacts")) {
+      var calculator = header.querySelector(".header-cta");
+
+      if (!calculator) {
+        calculator = Array.from(
+          header.querySelectorAll("a")
+        ).find(function (link) {
+          return /рассчитать стоимость/i.test(link.textContent);
+        });
+      }
+
+      if (calculator && calculator.parentElement) {
+        var parent = calculator.parentElement;
+        parent.classList.add("vs-header-container");
+
+        var headerGroup = document.createElement("div");
+        headerGroup.id = "vs-header-contacts";
+        headerGroup.className = "vs-contact-buttons";
+
+        parent.insertBefore(headerGroup, calculator);
+        headerGroup.appendChild(calculator);
+        addContacts(headerGroup, header);
+      }
+    }
+
+    // Контактный блок «Напишите мне».
+    var heading = Array.from(
+      document.querySelectorAll("h2, h3, h4")
+    ).find(function (element) {
+      return element.textContent
+        .trim()
+        .toLowerCase() === "напишите мне";
+    });
+
+    if (heading &&
+        !document.getElementById("vs-message-contacts")) {
+      var section = heading.parentElement;
+      var avito = section.querySelector('a[href*="avito.ru"]');
+      var contactGroup = document.createElement("div");
+
+      contactGroup.id = "vs-message-contacts";
+      contactGroup.className = "vs-contact-buttons";
+
+      if (avito) {
+        avito.insertAdjacentElement("afterend", contactGroup);
+      } else {
+        section.appendChild(contactGroup);
+      }
+
+      addContacts(contactGroup, section);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", restoreContacts);
+  } else {
+    restoreContacts();
+  }
+})();
+</script>
+</body>
 </html>
