@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Электромонтаж и системы «Умный дом» | Всеволод</title>
+  <meta name="description" content="Электромонтажные работы, монтаж систем «Умный дом», видеонаблюдения и автоматизации. Опыт, завершённые проекты, качественный монтаж.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #16202b;
+      color: #fff;
+      padding: 22px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      opacity: .85;
+      font-size: 15px;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px 50px;
+    }
+
+    .hero-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .hero-text {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .big-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .big-button {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+      transition: transform .2s ease, box-shadow .2s ease;
+      background: #16202b;
+    }
+
+    .big-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, .18);
+    }
+
+    .big-button svg {
+      display: block;
+      width: 100%;
+      height: 240px;
+    }
+
+    .big-button-content {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .big-button-content h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .big-button-content p {
+      font-size: 15px;
+      opacity: .9;
+    }
+
+    .contacts {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .contacts h2 {
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      font-size: 16px;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+      opacity: .92;
+    }
+
+    .phone { background: #25a244; }
+    .max { background: #7b5cff; }
+    .avito { background: #005bff; }
+
+    footer {
+      background: #16202b;
+      color: #fff;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 24px; }
+      .big-button svg { height: 190px; }
+      .big-button-content h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Электромонтаж и системы «Умный дом»</h1>
+  <p>Качественный монтаж, автоматизация и видеонаблюдение</p>
+</header>
+
+<main>
+  <h2 class="hero-title">Выберите услугу</h2>
+  <p class="hero-text">Электромонтажные работы и современные системы автоматизации для дома, квартиры и бизнеса.</p>
+
+  <div class="big-buttons">
+    <a class="big-button" href="#electro">
+      <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Электромонтаж">
+        <rect width="600" height="240" fill="#16202b"/>
+        <rect x="70" y="45" width="200" height="150" rx="10" fill="#243447"/>
+        <rect x="90" y="70" width="160" height="100" rx="6" fill="#31465e"/>
+        <circle cx="130" cy="100" r="9" fill="#f4b942"/>
+        <circle cx="170" cy="100" r="9" fill="#f4b942"/>
+        <circle cx="210" cy="100" r="9" fill="#f4b942"/>
+        <rect x="105" y="130" width="130" height="8" rx="4" fill="#4f6a85"/>
+        <rect x="105" y="150" width="90" height="8" rx="4" fill="#4f6a85"/>
+        <path d="M300 60 L360 60 L330 120 L390 120 L300 200 L330 130 L270 130 Z" fill="#f4b942"/>
+        <rect x="420" y="55" width="110" height="130" rx="10" fill="#243447"/>
+        <rect x="440" y="80" width="70" height="20" rx="5" fill="#31465e"/>
+        <rect x="440" y="115" width="70" height="20" rx="5" fill="#31465e"/>
+        <rect x="440" y="150" width="70" height="20" rx="5" fill="#31465e"/>
+      </svg>
+      <div class="big-button-content">
+        <h2>Электромонтаж</h2>
+        <p>Монтаж проводки, щитов, розеток, освещения и электрики под ключ</p>
+      </div>
+    </a>
+
+    <a class="big-button" href="umny-dom.html">
+      <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Умный дом">
+        <rect width="600" height="240" fill="#0f2f43"/>
+        <path d="M120 190 L300 65 L480 190 Z" fill="#164a66"/>
+        <rect x="190" y="130" width="220" height="60" fill="#0f2f43"/>
+        <rect x="220" y="150" width="45" height="40" fill="#7fd1ff"/>
+        <rect x="335" y="150" width="45" height="40" fill="#7fd1ff"/>
+        <circle cx="300" cy="115" r="22" fill="#7fd1ff"/>
+        <path d="M293 115 h14 M300 108 v14" stroke="#0f2f43" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="470" cy="70" r="7" fill="#7fd1ff"/>
+        <circle cx="500" cy="90" r="5" fill="#7fd1ff"/>
+        <circle cx="130" cy="80" r="6" fill="#7fd1ff"/>
+        <circle cx="105" cy="105" r="4" fill="#7fd1ff"/>
+      </svg>
+      <div class="big-button-content">
+        <h2>Система «Умный дом»</h2>
+        <p>Автоматизация освещения, климата, безопасности и видеонаблюдения</p>
+      </div>
+    </a>
+  </div>
+
+  <section class="contacts" id="electro">
+    <h2>Свяжитесь со мной</h2>
+    <div class="contact-buttons">
+      <a class="contact-button phone" href="tel:+7XXXXXXXXXX">📞 Позвонить</a>
+      <a class="contact-button max" href="https://max.ru/ВАШ_ПРОФИЛЬ" target="_blank" rel="noopener">💬 MAX</a>
+      <a class="contact-button avito" href="https://www.avito.ru/ВАШ_ПРОФИЛЬ" target="_blank" rel="noopener">🛒 Avito</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Всеволод — электромонтаж и системы «Умный дом»
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
